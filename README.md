@@ -1,2 +1,2 @@
-# isadore
-A simple, Python-based inventory management system
+# Isadore
+### A Python-based, CLI Inventory Management System
