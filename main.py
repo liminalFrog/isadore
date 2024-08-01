@@ -109,7 +109,7 @@ def add_item(data):
   # If no reorder quantity
   if (data[4] is None or data[4] == ""):
     data[4] = 0
-  if (data[5] is None or data[5] == ""):
+  if (data[5] == False or data[5] is None or data[5] == ""):
     data[5] = "Active"
   try:
     with sqlite3.connect('src/isadore.db') as conn:
@@ -498,6 +498,11 @@ while True:
           clear()
           print(Fore.YELLOW + "Import Existing Database File" + Fore.RESET)
           print("Enter the full path of your .db file. (Example: /home/yourname/Documents/filename.db)")
+          input("File path: ")
+        if (settingsOption == 'e'):
+          clear()
+          print(Fore.YELLOW + "Export Existing Database File" + Fore.RESET)
+          print("Save to: ")
           input("File path: ")
         else:
           invalidInput = True

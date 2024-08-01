@@ -3,6 +3,10 @@
 ## Installation
 To install, open your terminal, navigate to the folder containing Isadore's files, and type:
 ```
+python3 -m pip install --upgrade pip
+```
+then:
+```
 pip install requirements.txt
 ```
 to install the program's prerequisites.
