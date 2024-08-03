@@ -99,7 +99,7 @@ colors = {
 }
 
 def add_item(data):
-  # If no opening stock
+  
   if (data[1] is None or data[1] == ""):
     data[1] = None
   if (data[2] is None or data[2] == ""):
@@ -109,12 +109,10 @@ def add_item(data):
   # If no reorder quantity
   if (data[4] is None or data[4] == ""):
     data[4] = 0
-  if (data[5] == False or data[5] is None or data[5] == ""):
-    data[5] = "Active"
   try:
     with sqlite3.connect('src/isadore.db') as conn:
       cur = conn.cursor()
-      cur.execute('INSERT INTO items(item_name, item_code, item_productcode, item_stock, item_reorder, item_status) VALUES(?,?,?,?,?,?)', (data))
+      cur.execute('INSERT INTO items(item_name, item_code, item_productcode, item_stock, item_reorder, item_status) VALUES(?,?,?,?,?,"Active")', (data))
       conn.commit()
       return cur.lastrowid
   except sqlite3.Error as e:
